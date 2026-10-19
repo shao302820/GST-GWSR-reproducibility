@@ -1,0 +1,62 @@
+{
+  "configuration_fingerprint": "1e8d86ff2f2678ba7f5c47dd",
+  "model_id": "gradient_boosting",
+  "display_name": "梯度提升回归树",
+  "selected_parameters": {
+    "learning_rate": 0.03,
+    "max_depth": 2,
+    "min_samples_leaf": 6,
+    "n_estimators": 150
+  },
+  "complexity": {
+    "tree_count": 150,
+    "total_tree_nodes": 1044,
+    "mean_tree_depth": 2.0
+  },
+  "efficiency": {
+    "tuning_wall_seconds": 1.9826180000090972,
+    "tuning_cpu_seconds_main_process": 0.265625,
+    "tuning_peak_tracemalloc_mb": 0.5268869400024414,
+    "final_fit_wall_seconds": 0.21487010002601892,
+    "final_fit_cpu_seconds_main_process": 0.1875,
+    "final_fit_peak_tracemalloc_mb": 0.3112754821777344,
+    "prediction_wall_seconds": 0.0011199999717064202,
+    "prediction_cpu_seconds_main_process": 0.015625,
+    "prediction_peak_tracemalloc_mb": 0.027723312377929688,
+    "total_wall_seconds": 2.1986081000068225,
+    "search_candidate_count": 16,
+    "spatial_cv_fit_count": 80,
+    "parallel_workers": 12,
+    "memory_measurement_scope": "tracemalloc main process only; native and worker memory excluded",
+    "time_measurement_scope": "current run: spatial tuning + final fit + outer-test prediction",
+    "pipeline_elapsed_seconds": 2.200723999994807,
+    "serialized_artifact_size_bytes": 31129
+  },
+  "diagnostics": {
+    "best_spatial_cv_RMSE_log_heat_flow": 0.2886889434540158,
+    "best_spatial_cv_score_std": 0.02104967251375147
+  },
+  "notes": {
+    "test_target_used_for_tuning": false,
+    "predictive_features": [
+      "topo",
+      "bouguer",
+      "sediment",
+      "moho",
+      "lab",
+      "cpd",
+      "lithos_km",
+      "volcano"
+    ],
+    "coordinates_as_predictors": false,
+    "inner_fold_scaling": "Feature StandardScaler and log-target StandardScaler are fitted separately inside every spatial CV training fold."
+  },
+  "artifact": {
+    "saved": true,
+    "path": "C:\\Users\\shen\\Desktop\\桌面混乱文件夹\\ml_multiseed_benchmark\\seed_42\\model_runs\\gradient_boosting\\fitted_model.joblib",
+    "size_bytes": 31129,
+    "failure": null
+  },
+  "outer_test_metrics_written_here": false,
+  "outer_test_target_used_for_tuning": false
+}

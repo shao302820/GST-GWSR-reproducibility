@@ -1,0 +1,51 @@
+{
+  "features": [
+    "topo",
+    "bouguer",
+    "sediment",
+    "moho",
+    "lab",
+    "cpd",
+    "lithos_km",
+    "volcano"
+  ],
+  "counts": {
+    "all": 1024,
+    "raw_train": 819,
+    "clean_train_full": 815,
+    "clean_train_used": 815,
+    "removed_train": 4,
+    "test": 205
+  },
+  "software_versions": {
+    "numpy": "2.5.1",
+    "pandas": "3.0.5",
+    "scikit-learn": "1.9.0",
+    "statsmodels": "0.14.6",
+    "mgwr": "2.2.1",
+    "spglm": "1.1.0",
+    "libpysal": "4.8.1",
+    "esda": "2.5.1",
+    "xgboost": "3.2.0",
+    "joblib": "1.5.3",
+    "matplotlib": "3.11.1",
+    "python": "3.14.0",
+    "platform": "Windows-11-10.0.26300-SP0"
+  },
+  "spatial_cv_blocks": 5,
+  "stochastic_seeds": [
+    42,
+    123,
+    456
+  ],
+  "deterministic_models": [
+    "ols_log",
+    "svr_rbf",
+    "gwr",
+    "mgwr"
+  ],
+  "baseline_distance": "retained original baseline implementation; Euclidean lon/lat for local forest, spherical=false for GWR/MGWR",
+  "aggregation": "pointwise original-scale prediction mean for stochastic models; single deterministic fit otherwise",
+  "comparison_use": "retained aligned external baseline predictions; no claim of new fitting in the final GWSR/GST run",
+  "source_aggregate_sha256": "6640eba0a1d6d3e46ba8aa29ece57dcc87b673fcc1168bbfe81578e4eac4af53"
+}

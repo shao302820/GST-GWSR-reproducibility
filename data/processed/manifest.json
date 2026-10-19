@@ -1,8 +1,8 @@
 {
   "file": "heat_flow_stations.csv",
-  "status": "bundled in the private advisor repository; review provider terms before public release",
+  "status": "bundled exact input for the current complete experiment",
   "recorded_row_count": 1024,
   "recorded_sha256": "b28b789a818500f718f81cbccc2b6a68a72c1a164c9d536016ff099a8583fe05",
   "columns": ["lon", "lat", "heat_flow", "topo", "bouguer", "sediment", "moho", "lab", "cpd", "lithos_km", "volcano"],
-  "note": "The hash is carried from the recorded experiment manifests and lets a curator verify the exact derived input without publishing it."
+  "note": "The SHA-256 identifies the exact derived table used for bandwidth CV, GST CV and the locked outer comparison."
 }

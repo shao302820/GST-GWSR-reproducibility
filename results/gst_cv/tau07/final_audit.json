@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "batches": 90,
+  "ensemble_folds": 30,
+  "histories": 14742,
+  "n_validation": 819,
+  "fixed_membership_all_alphas": true,
+  "independent2457_predictions_match_historical": true,
+  "normalized_entry_all14742_tasks_checked": true,
+  "known_failure_regression_passed": true,
+  "pointwise_ensemble_means_and_metrics": true,
+  "actual5_20_counts_checked": true,
+  "source_data_hashes": true,
+  "outer_test_run": false
+}

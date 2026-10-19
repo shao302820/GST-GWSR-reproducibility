@@ -1,0 +1,63 @@
+{
+  "configuration_fingerprint": "211096162d56594e38a5de92",
+  "model_id": "random_forest",
+  "display_name": "全局随机森林",
+  "selected_parameters": {
+    "max_depth": 12,
+    "max_features": 0.7,
+    "min_samples_leaf": 4,
+    "n_estimators": 500,
+    "n_jobs": 12
+  },
+  "complexity": {
+    "tree_count": 500,
+    "total_tree_nodes": 97664,
+    "mean_tree_depth": 11.98
+  },
+  "efficiency": {
+    "tuning_wall_seconds": 5.563776700000744,
+    "tuning_cpu_seconds_main_process": 0.921875,
+    "tuning_peak_tracemalloc_mb": 0.6355352401733398,
+    "final_fit_wall_seconds": 1.7943508999887854,
+    "final_fit_cpu_seconds_main_process": 2.21875,
+    "final_fit_peak_tracemalloc_mb": 1.3455705642700195,
+    "prediction_wall_seconds": 0.09676300000865012,
+    "prediction_cpu_seconds_main_process": 0.109375,
+    "prediction_peak_tracemalloc_mb": 0.255584716796875,
+    "total_wall_seconds": 7.45489059999818,
+    "search_candidate_count": 18,
+    "spatial_cv_fit_count": 90,
+    "parallel_workers": 12,
+    "memory_measurement_scope": "tracemalloc main process only; native and worker memory excluded",
+    "time_measurement_scope": "current run: spatial tuning + final fit + outer-test prediction",
+    "pipeline_elapsed_seconds": 7.457689900009427,
+    "serialized_artifact_size_bytes": 2561797
+  },
+  "diagnostics": {
+    "best_spatial_cv_RMSE_log_heat_flow": 0.27858994124631337,
+    "best_spatial_cv_score_std": 0.02081191999973615
+  },
+  "notes": {
+    "test_target_used_for_tuning": false,
+    "predictive_features": [
+      "topo",
+      "bouguer",
+      "sediment",
+      "moho",
+      "lab",
+      "cpd",
+      "lithos_km",
+      "volcano"
+    ],
+    "coordinates_as_predictors": false,
+    "inner_fold_scaling": "Feature StandardScaler and log-target StandardScaler are fitted separately inside every spatial CV training fold."
+  },
+  "artifact": {
+    "saved": true,
+    "path": "C:\\Users\\shen\\Desktop\\桌面混乱文件夹\\ml_multiseed_benchmark\\seed_456\\model_runs\\random_forest\\fitted_model.joblib",
+    "size_bytes": 2561797,
+    "failure": null
+  },
+  "outer_test_metrics_written_here": false,
+  "outer_test_target_used_for_tuning": false
+}

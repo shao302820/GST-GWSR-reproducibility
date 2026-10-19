@@ -1,0 +1,25 @@
+{
+  "arm": "independent20",
+  "n": 205,
+  "R2": 0.6255017419182882,
+  "RMSE": 14.249755414303774,
+  "MAE": 10.037380443372738,
+  "points5_per_seed": 0,
+  "points20_per_seed": 205,
+  "task_count_three_seeds": 615,
+  "completed_seeds": [
+    42,
+    123,
+    456
+  ],
+  "csv_sha256": "38783e9f6d465bfeedd78647d1772489ca058e2c9de02d377f8aebf291903766",
+  "batch_wall_seconds": 512.7786536999629,
+  "chain_cpu_seconds": 3992.53125,
+  "sum_task_seconds": 4036.9834372004843,
+  "initialization_seconds": 200.0392620000639,
+  "archive_management_seconds": 0.0,
+  "training_execute_calls": 24600000,
+  "explicit_objective_evaluations": 12300000,
+  "protected_count": 0,
+  "failed_count": 0
+}

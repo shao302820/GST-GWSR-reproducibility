@@ -1,12 +1,11 @@
-# Reproducibility checklist
+# Current reproducibility checklist
 
-- [ ] Confirm licenses and versions for the IHFC source and all predictor products.
-- [ ] Create `data/processed/heat_flow_stations.csv` with the required schema.
-- [ ] Run `scripts/validate_station_table.py` and archive its JSON report.
-- [ ] Record Python and package versions with `scripts/check_environment.py`.
-- [ ] Run training-only `k` selection and verify `selected_k=45`.
-- [ ] Run training-only `alpha–tau` selection and verify `(0.25, 0.7)`.
-- [ ] Run the three-seed outer comparison with the locked configuration.
-- [ ] Compare metrics, prediction files, formula files, and protection counts with `results/final_outer/`.
-- [ ] Record hardware and wall-clock time; runtime is not expected to match across machines.
-- [ ] Keep the outer evaluation responses out of every tuning command.
+1. Retrieve Git LFS source products if rebuilding input.
+2. Validate the exact station table and its SHA-256.
+3. Install the recorded GP environment.
+4. Run scripts/verify_results.py and the tests.
+5. For a fresh experiment, run scripts/run_experiment.py all into an empty output directory.
+6. Verify nine k candidates select55 and20 GST candidates select(.75,.5), using pointwise original-scale means before pooled OOF metrics.
+7. Compare205-station ensembles, individual seeds, expressions, generation histories and branch counts.
+8. Reproduce external baselines in their separate recorded environment if desired.
+9. Interpret runtime as descriptive completed-batch timing, including parent/archive cost.

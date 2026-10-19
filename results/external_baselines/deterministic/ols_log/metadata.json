@@ -1,0 +1,62 @@
+{
+  "configuration_fingerprint": "1e8d86ff2f2678ba7f5c47dd",
+  "model_id": "ols_log",
+  "display_name": "OLS（统一对数目标）",
+  "selected_parameters": {
+    "fit_intercept": true
+  },
+  "complexity": {
+    "coefficient_count": 9,
+    "intercept": -9.909898805695676e-16,
+    "coefficients": {
+      "topo": 0.5560616340623945,
+      "bouguer": 0.14209258786966456,
+      "sediment": 0.03486029363129408,
+      "moho": -0.1325415534005741,
+      "lab": -0.16461408367494068,
+      "cpd": -0.3273798970109587,
+      "lithos_km": 0.039679119617215035,
+      "volcano": 0.2953983614924522
+    }
+  },
+  "efficiency": {
+    "final_fit_wall_seconds": 0.0023717000149190426,
+    "final_fit_cpu_seconds_main_process": 0.0,
+    "final_fit_peak_tracemalloc_mb": 0.109466552734375,
+    "prediction_wall_seconds": 0.00037599983625113964,
+    "prediction_cpu_seconds_main_process": 0.0,
+    "prediction_peak_tracemalloc_mb": 0.003612518310546875,
+    "tuning_wall_seconds": 0.0,
+    "total_wall_seconds": 0.0027476998511701822,
+    "search_candidate_count": 0,
+    "spatial_cv_fit_count": 0,
+    "parallel_workers": 1,
+    "memory_measurement_scope": "tracemalloc main process only; native memory excluded",
+    "time_measurement_scope": "current run: final fit + outer-test prediction",
+    "pipeline_elapsed_seconds": 0.003181600011885166,
+    "serialized_artifact_size_bytes": 617
+  },
+  "diagnostics": {},
+  "notes": {
+    "test_target_used_for_tuning": false,
+    "predictive_features": [
+      "topo",
+      "bouguer",
+      "sediment",
+      "moho",
+      "lab",
+      "cpd",
+      "lithos_km",
+      "volcano"
+    ],
+    "coordinates_as_predictors": false
+  },
+  "artifact": {
+    "saved": true,
+    "path": "C:\\Users\\shen\\Desktop\\GWSR修改\\uniform_model_benchmark\\model_runs\\ols_log\\fitted_model.joblib",
+    "size_bytes": 617,
+    "failure": null
+  },
+  "outer_test_metrics_written_here": false,
+  "outer_test_target_used_for_tuning": false
+}

@@ -1,0 +1,15 @@
+{
+  "arm": "alpha_0.25",
+  "fold": 1,
+  "n": 164,
+  "R2": 0.4852921510862853,
+  "RMSE": 17.141101392346464,
+  "MAE": 11.922880990372612,
+  "completed_seeds": [
+    42,
+    123,
+    456
+  ],
+  "csv_sha256": "485f77448be132536eb249b6d0f1e526dc3a73ee93434c9733f35361d202ddce",
+  "scope": "full819 training-internal five-fold CV"
+}

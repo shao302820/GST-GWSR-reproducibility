@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "batches": 6,
+  "histories": 1230,
+  "ensembles": 2,
+  "n_test": 205,
+  "result_hash_count": 34,
+  "reference_hash_count": 1399,
+  "means_metrics_station_alignment": true,
+  "actual5_20_branches": true,
+  "normalization_checked": true,
+  "source_data_code_parameters_unchanged": true,
+  "selection_configurations": 20,
+  "test_used_for_selection": false,
+  "automatic_next_stage": false,
+  "user_requested_resume": true,
+  "preserved_completed_batch_hashes_match": true,
+  "resume_sources_unchanged": true,
+  "aborted_batch_overhead_lower_bound_seconds": 27
+}

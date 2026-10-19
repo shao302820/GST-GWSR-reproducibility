@@ -1,0 +1,7 @@
+{
+  "status": "complete",
+  "batches": 90,
+  "ensemble_folds": 30,
+  "histories": 14742,
+  "tau": 0.5
+}

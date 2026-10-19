@@ -1,11 +1,25 @@
 {
-  "candidates": [20, 25, 30, 35, 40, 45, 50, 60],
+  "candidates": [
+    20,
+    25,
+    30,
+    35,
+    40,
+    45,
+    50,
+    55,
+    60
+  ],
   "folds": 5,
-  "folding": "training-only random KFold(n_splits=5, shuffle=true, random_state=42)",
-  "seeds": [42, 123, 456],
-  "criterion": "mean across the three GP seeds of pooled inner-CV RMSE; exact ties choose smaller k",
-  "selected_k": 45,
+  "split_seed": 42,
+  "seeds": [
+    42,
+    123,
+    456
+  ],
+  "criterion": "minimum819 pooled OOF original-scale prediction-mean ensemble RMSE; exact ties smaller k",
+  "selected_k": 55,
   "outer_test_used": false,
-  "kernel": "adaptive_bisquare",
-  "guard": "same predefined prediction protection rule"
+  "distance": "Haversine km",
+  "earth_radius_km": 6371.0088
 }

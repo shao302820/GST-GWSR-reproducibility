@@ -1,18 +1,50 @@
 {
-  "protocol": "protected fixed outer split",
-  "input_schema": ["lon", "lat", "heat_flow", "topo", "bouguer", "sediment", "moho", "lab", "cpd", "lithos_km", "volcano"],
-  "outer_split": {"test_size": 0.2, "random_seed": 42, "training_rows": 819, "evaluation_rows": 205},
-  "training_cleaning": {"method": "3-IQR on outer-training heat_flow", "retained_rows": 815},
+  "input_schema": [
+    "lon",
+    "lat",
+    "heat_flow",
+    "topo",
+    "bouguer",
+    "sediment",
+    "moho",
+    "lab",
+    "cpd",
+    "lithos_km",
+    "volcano"
+  ],
+  "outer_split": {
+    "test_size": 0.2,
+    "random_seed": 42,
+    "training_rows": 819,
+    "evaluation_rows": 205
+  },
+  "training_cleaning": {
+    "method": "training-only3IQR",
+    "retained_rows": 815
+  },
   "kernel": "adaptive_bisquare",
-  "k": 45,
-  "gst_similarity": "distance + predictor-distribution similarity",
-  "alpha": 0.25,
-  "tau": 0.7,
-  "gp_seeds": [42, 123, 456],
+  "distance": "Haversine km",
+  "earth_radius_km": 6371.0088,
+  "k": 55,
+  "alpha": 0.75,
+  "tau": 0.5,
+  "gp_seeds": [
+    42,
+    123,
+    456
+  ],
   "population_size": 1000,
   "complete_generations": 20,
   "adaptation_generations": 5,
-  "prediction_guard": "non-finite or unsafe standardized prediction -> local adaptive-bisquare weighted mean",
+  "inherited_reevaluation_outside_five_rounds": true,
+  "archive_capacity": 1000,
+  "inherited_candidates": 800,
+  "fresh_candidates": 200,
+  "workers": 12,
+  "numerical_threads": 1,
+  "chains": 24,
+  "similarity_features": 8,
+  "prediction_guard": "local weighted-mean response fallback for unsafe standardized prediction; training failures stop",
   "test_responses_used_for_tuning": false,
-  "ensemble": "pointwise arithmetic mean of the three seed predictions"
+  "ensemble": "pointwise arithmetic mean of three original-scale predictions before metrics"
 }

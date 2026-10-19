@@ -1,0 +1,22 @@
+{
+  "arm": "elite_archive",
+  "seed": 123,
+  "n": 205,
+  "R2": 0.5818493586606066,
+  "RMSE": 15.05736203928242,
+  "MAE": 10.709952147246826,
+  "batch_wall_seconds": 84.94903309998335,
+  "chain_cpu_seconds": 708.3125,
+  "sum_task_seconds": 716.2388110007159,
+  "initialization_seconds": 125.74868410016643,
+  "archive_management_seconds": 47.69308199849911,
+  "training_execute_calls": 3132000,
+  "explicit_objective_evaluations": 1566000,
+  "points5": 181,
+  "points20": 24,
+  "protected_count": 0,
+  "failed_count": 0,
+  "csv_sha256": "4881c55a7f2fc51badc9e3938d1d539a4e599bb099b71f4ff02fe0c6ae64cfe0",
+  "histories_sha256": "e48674fe63fc85217987c37c590905f2e6249b0a013abe608fb86192f67ab4bf",
+  "parameter_lock_sha256": "2ae4387d559bbe21f519e667a5fc1f7527c745e975b948f9134f346ba70fbd6d"
+}

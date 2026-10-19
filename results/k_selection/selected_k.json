@@ -1,0 +1,17 @@
+{
+  "selected_k": 55,
+  "selected": {
+    "k": 55,
+    "n": 819,
+    "R2": 0.32312192141012,
+    "RMSE": 20.644363347658924,
+    "MAE": 12.559534216800564,
+    "fold_RMSE_mean": 20.421311197617165,
+    "fold_RMSE_sample_SD": 3.343938137779518,
+    "previous_mean_seed_CV_RMSE": 21.592139286886223,
+    "seed_prediction_guard_count": 1
+  },
+  "selection_rule": "lowest RMSE of 819 pooled OOF arithmetic-mean ensemble predictions; exact ties smaller k",
+  "no_test_predictions_or_responses_used": true,
+  "seed_predictions_averaged_on_original_heatflow_scale": true
+}

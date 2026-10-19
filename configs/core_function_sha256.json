@@ -1,0 +1,57 @@
+{
+  "src/gwsr/exact/original_bisquare.py": {
+    "build_sr_model": "c7c12dc89b702d813d938e983460f47b77668fcc290fce43c4f1d07c3be3d580",
+    "iqr_bounds": "df7002a18653898f351570ea388f657211862e989831be388b8d1f692abf310a",
+    "get_local_sample": "5f16e0e3ffca3b8f2d822a3b2b4cc8860514a27699a7e2d1f3359a283324d7a7",
+    "inverse_transform": "70107ec2a0de74185855358b0c230f8ed9f9b61bf6c31cbf518cc15001f8f33b"
+  },
+  "src/gwsr/exact/paper_gp.py": {
+    "exact_expression": "a5d4bd5427815cde197ec17221f93fbe22b4675d1e7c3aa12a963542bc765fc0",
+    "local_objective": "17471f41cc82793e9be4831d304d7616152778bcf7f2e8ca65fd05f21789ce35",
+    "search": "0f3552742c6bb33a0bdb71479b9ba9e000869e618a57147f4fb59a5f5f5575d2",
+    "predict_one_point": "1cbc8890d5de4c8f69769b6c364c1f9c4155144b85c7e1a87ec7bc1c410a847e",
+    "inverse_transform": "178fd81b90204850ba9f44215ecc05290a04fac978f911e9703bf649553d8ba4"
+  },
+  "src/gwsr/exact/select_alpha_tau_exact.py": {
+    "haversine": "5b87e5149a69d450445b273536c2fe86deeafbc125f2a9db62cbd2018e45b923",
+    "similarity_matrices": "524d1d3247ee5f5212999aaae5c445c84a036033655a2126f017ea40e0e37498",
+    "build_order": "14c90d9fc539bc50985543c5e00dae657b1d2499e0e0e36f9e8635e28b266944",
+    "metrics": "d523179e8bb64eead0b9374ee40947fd7061deccc70b960854e60fa9c2453a1b",
+    "projected": "3fa284e1feabbed592eb4a183743e4901c6e6ce6b68b8ce9b08cf24c38858426",
+    "objective": "4aa71a5a1b1069c83f9a8abe1fd926f0f2fd4df54ae6387d4088295881743bb3"
+  },
+  "src/gwsr/exact/archive_engine.py": {
+    "signature": "9949e50d4ab096290485ada6952ed20272f8b20d9dce97f99e686a0e008acb67",
+    "EliteArchive": "b3f34026bce8e69cc01f43b095eaafd183ee39bf03149823a743806025242d2e",
+    "take800": "c179c575967c2b7981e08b01d23215190a096719fbb8fbb312ba579176fd2cf7",
+    "parameters": "0c84fc1bc62ef1857d71afcc64f3373b7bc4b783775b3a8605217a788c16f8e4",
+    "search_population": "5468a4a790213ee234714acc6511c4bda0664620a9b3b16917f7429b2d56cfc6",
+    "run_task": "62e86353efd849740cdad3d46e31bdae96d70ebcc3c2df89feb60ade29119bea",
+    "run_chain": "8a9d1e53e712682c052e3978283391d0462d9b9c7e3667c26b70693907de7cc3",
+    "worker_identity": "6a8f775b0e383dc106fe6ad7c1f618731ea8b4f5d4651645ae6982afaa24fa3b"
+  },
+  "src/gwsr/exact/grid_engine.py": {
+    "run_chain": "ab9ded0b52fcb4fa0ca1db73072bc75ff97fd0e40338103b966b59baf10a7f2b",
+    "worker_identity": "30256077236c0386fe5b101976cf5772e5220cb9ceb6ed0731cb87881105c11a"
+  },
+  "src/baselines/global_models.py": {
+    "_clean_params": "0bd0dfe4213b895b41809eb561d6471064076b4152153a69ce238dd5bde3408d",
+    "_grid_search": "939d969952d7a5d85883de46ed99a7f47ce609006bfcb1c817f0d68727f9d942",
+    "run_ols": "03a5051eecee61be4018a88167801bf0a584e5032dcea633c7fb22a3fe4b648b",
+    "run_random_forest": "96e4ae6e124a8cc46478a117577b0f5efd8617459ac82e36b3e654eaec3d55c3",
+    "run_gradient_boosting": "0af1e8b2f41bcacbad074bbd919f00fec02386763684b7055e14a372545b1679",
+    "run_xgboost": "5a8338c6842d1e2ccaafb256decefa8df0a65d2de33433bf8aabfb9d7d2a994e",
+    "run_svr": "70a4254887726ead8aacfdaa71f9616d56e579a7770135d956f59764aea06a84"
+  },
+  "src/baselines/spatial_models.py": {
+    "_finite_float": "6eeb1fb640d53e4466434d25660cc839dd9d7cb0258ee541bfe2dee4b2357d09",
+    "_adaptive_bisquare_weights": "367f93fb79b2e65d5b2b5753098a92c176b896f9142463862134eb9c9655d78c",
+    "run_gwr": "67f8a6436b3f6d56076d53138e89affa1d1728a252d7519ee79d353b5fc305cb",
+    "_mgwr_out_of_sample_prediction": "d363cf20da173cac92824038fac949e8f0593953612f166f03957a4d175d87c4",
+    "run_mgwr": "e57919eb5c9a0a46957361d5eaad2f43b91882bdf63589a9f57d9cfe1999b2f2",
+    "_gaussian_local_weights": "5ba254f628003a85b1e0fab5aba799652864811357138ad68ed85d4f7096dec3",
+    "_fit_local_rf_prediction": "95b6d003a9ea1f57032e8802f66058cc24a27883eab7a03938b52d6553300865",
+    "_gwrf_anchor_positions": "9115ef154cde3fbee2bfad1a711450515e058277f9edf0f921585acc9bb1e5e5",
+    "run_gwrf": "09ff76ef72fa4adc3557b1fc086f3a52262d2a7452535710908b26d56332ba30"
+  }
+}

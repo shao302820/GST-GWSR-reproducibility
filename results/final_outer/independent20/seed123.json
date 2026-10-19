@@ -1,0 +1,22 @@
+{
+  "arm": "independent20",
+  "seed": 123,
+  "n": 205,
+  "R2": 0.558796725799958,
+  "RMSE": 15.466849955767138,
+  "MAE": 10.414234547370024,
+  "batch_wall_seconds": 163.89848630002234,
+  "chain_cpu_seconds": 1272.109375,
+  "sum_task_seconds": 1285.9161439003074,
+  "initialization_seconds": 64.5257524002227,
+  "archive_management_seconds": 0.0,
+  "training_execute_calls": 8200000,
+  "explicit_objective_evaluations": 4100000,
+  "points5": 0,
+  "points20": 205,
+  "protected_count": 0,
+  "failed_count": 0,
+  "csv_sha256": "b1b77943d6730a88a93a41f6269d7880ab25bf8c99e8edc3c0f9b53badd2a054",
+  "histories_sha256": "08158452707bc80aae70d84d8718f80139dd0def9212b5c535c66e7ca994b082",
+  "parameter_lock_sha256": "2ae4387d559bbe21f519e667a5fc1f7527c745e975b948f9134f346ba70fbd6d"
+}

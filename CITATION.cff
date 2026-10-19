@@ -4,6 +4,6 @@ message: "Please cite the accompanying GST-GWSR manuscript and the source datase
 type: software
 authors:
   - name: "GST-GWSR authors"
-version: "1.0.0"
-date-released: 2026-10-14
+version: "2.0.0"
+date-released: 2026-10-19
 license: MIT

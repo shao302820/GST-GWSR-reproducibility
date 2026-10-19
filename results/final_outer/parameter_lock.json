@@ -1,0 +1,37 @@
+{
+  "k": 55,
+  "alpha": 0.75,
+  "tau": 0.5,
+  "selected_cv": {
+    "alpha": 0.75,
+    "tau": 0.5,
+    "R2": 0.3421717043141409,
+    "RMSE": 20.351786811006768,
+    "MAE": 12.43139263301588
+  },
+  "seeds": [
+    42,
+    123,
+    456
+  ],
+  "rule": "minimum819 pooled prediction-mean ensemble CV RMSE; exact ties alpha then tau",
+  "selection_grid": {
+    "alpha": [
+      0,
+      0.25,
+      0.5,
+      0.75,
+      1
+    ],
+    "tau": [
+      0.5,
+      0.6,
+      0.7,
+      0.8
+    ]
+  },
+  "candidate_count": 20,
+  "locked_at": "2026-10-19T08:25:00+08:00",
+  "test_used_for_selection": false,
+  "prior_test_partition_already_evaluated": true
+}

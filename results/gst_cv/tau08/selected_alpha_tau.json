@@ -1,0 +1,10 @@
+{
+  "alpha": 0.75,
+  "tau": 0.8,
+  "n": 819,
+  "rule": "minimum pooled819 pointwise three-seed ensemble CV RMSE; exact ties smaller alpha",
+  "R2": 0.33651647601475754,
+  "RMSE": 20.43907987713294,
+  "MAE": 12.475853594405844,
+  "outer_test_run": false
+}

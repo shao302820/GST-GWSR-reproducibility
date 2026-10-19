@@ -1,0 +1,10 @@
+﻿model,coefficient,adaptive_bandwidth_neighbors,selection_method
+mgwr,Intercept,634.0,training-only multiscale AICc
+mgwr,topo,517.0,training-only multiscale AICc
+mgwr,bouguer,740.0,training-only multiscale AICc
+mgwr,sediment,351.0,training-only multiscale AICc
+mgwr,moho,22.0,training-only multiscale AICc
+mgwr,lab,812.0,training-only multiscale AICc
+mgwr,cpd,812.0,training-only multiscale AICc
+mgwr,lithos_km,812.0,training-only multiscale AICc
+mgwr,volcano,92.0,training-only multiscale AICc

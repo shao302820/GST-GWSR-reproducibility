@@ -1,11 +1,33 @@
 {
-  "fixed_k": 45,
-  "alpha_grid": [0.0, 0.25, 0.5, 0.75, 1.0],
-  "tau_grid": [0.5, 0.7, 0.9],
+  "fixed_k": 55,
+  "alpha_grid": [
+    0,
+    0.25,
+    0.5,
+    0.75,
+    1
+  ],
+  "tau_grid": [
+    0.5,
+    0.6,
+    0.7,
+    0.8
+  ],
+  "candidate_count": 20,
   "folds": 5,
-  "seeds": [42, 123, 456],
-  "criterion": "lowest mean training-only CV RMSE",
-  "selected": {"alpha": 0.25, "tau": 0.7},
+  "seeds": [
+    42,
+    123,
+    456
+  ],
+  "criterion": "minimum819 pooled OOF original-scale prediction-mean ensemble RMSE; exact ties alpha then tau",
+  "selected": {
+    "alpha": 0.75,
+    "tau": 0.5
+  },
   "outer_test_used": false,
-  "similarity": "geographic distance + local predictor-distribution similarity"
+  "similarity": "geographic similarity + eight-dimensional target-point feature similarity",
+  "completed_batches": 360,
+  "completed_ensemble_folds": 120,
+  "completed_histories": 58968
 }

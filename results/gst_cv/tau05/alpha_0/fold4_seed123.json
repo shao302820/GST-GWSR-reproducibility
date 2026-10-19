@@ -1,0 +1,145 @@
+{
+  "arm": "alpha_0",
+  "fold": 4,
+  "seed": 123,
+  "n": 164,
+  "R2": 0.201745587527702,
+  "RMSE": 25.421052138026877,
+  "MAE": 13.618121744399865,
+  "batch_wall_seconds": 66.48744440003065,
+  "chain_cpu_seconds": 500.96875,
+  "sum_chain_wall_seconds": 505.92924420005875,
+  "sum_task_seconds": 505.5628359000548,
+  "initialization_seconds": 82.47934239939786,
+  "training_execute_calls": 2696000,
+  "explicit_objective_evaluations": 1348000,
+  "generations": 1210,
+  "mean_generations": 7.378048780487805,
+  "failed_count": 0,
+  "protected_count": 0,
+  "transfer_count": 138,
+  "csv_sha256": "c207e3de527211aec5b30e27e6b17a6f53f935308b069ab0f5e179a6f4bdc355",
+  "histories_sha256": "de274aa19bd691d95964e15f9bb9a6801d76a1db6e6a04345f97ef59bc0345cd",
+  "chain_timings": [
+    {
+      "chain_id": 0,
+      "chain_seconds": 42.10835329996189,
+      "chain_cpu_seconds": 41.671875
+    },
+    {
+      "chain_id": 1,
+      "chain_seconds": 48.53586390003329,
+      "chain_cpu_seconds": 48.078125
+    },
+    {
+      "chain_id": 2,
+      "chain_seconds": 23.799812600016594,
+      "chain_cpu_seconds": 23.625
+    },
+    {
+      "chain_id": 3,
+      "chain_seconds": 31.35765319998609,
+      "chain_cpu_seconds": 31.0625
+    },
+    {
+      "chain_id": 4,
+      "chain_seconds": 30.623697599978186,
+      "chain_cpu_seconds": 30.359375
+    },
+    {
+      "chain_id": 5,
+      "chain_seconds": 41.25990410003578,
+      "chain_cpu_seconds": 40.8125
+    },
+    {
+      "chain_id": 6,
+      "chain_seconds": 12.218080800026655,
+      "chain_cpu_seconds": 12.125
+    },
+    {
+      "chain_id": 7,
+      "chain_seconds": 6.553122000012081,
+      "chain_cpu_seconds": 6.5
+    },
+    {
+      "chain_id": 8,
+      "chain_seconds": 40.63876280002296,
+      "chain_cpu_seconds": 40.375
+    },
+    {
+      "chain_id": 9,
+      "chain_seconds": 14.85364510002546,
+      "chain_cpu_seconds": 14.78125
+    },
+    {
+      "chain_id": 10,
+      "chain_seconds": 10.036745699995663,
+      "chain_cpu_seconds": 9.9375
+    },
+    {
+      "chain_id": 11,
+      "chain_seconds": 10.117823599954136,
+      "chain_cpu_seconds": 10.078125
+    },
+    {
+      "chain_id": 12,
+      "chain_seconds": 19.037429900025018,
+      "chain_cpu_seconds": 18.890625
+    },
+    {
+      "chain_id": 13,
+      "chain_seconds": 24.72812270000577,
+      "chain_cpu_seconds": 24.578125
+    },
+    {
+      "chain_id": 14,
+      "chain_seconds": 7.562020700017456,
+      "chain_cpu_seconds": 7.484375
+    },
+    {
+      "chain_id": 15,
+      "chain_seconds": 15.430275199993048,
+      "chain_cpu_seconds": 15.28125
+    },
+    {
+      "chain_id": 16,
+      "chain_seconds": 8.156911799975205,
+      "chain_cpu_seconds": 8.046875
+    },
+    {
+      "chain_id": 17,
+      "chain_seconds": 11.957246300007682,
+      "chain_cpu_seconds": 11.828125
+    },
+    {
+      "chain_id": 18,
+      "chain_seconds": 43.34288489999017,
+      "chain_cpu_seconds": 42.421875
+    },
+    {
+      "chain_id": 19,
+      "chain_seconds": 11.863072599982843,
+      "chain_cpu_seconds": 11.75
+    },
+    {
+      "chain_id": 20,
+      "chain_seconds": 29.52394819998881,
+      "chain_cpu_seconds": 29.1875
+    },
+    {
+      "chain_id": 21,
+      "chain_seconds": 7.082705300010275,
+      "chain_cpu_seconds": 7.0625
+    },
+    {
+      "chain_id": 22,
+      "chain_seconds": 6.957855199987534,
+      "chain_cpu_seconds": 6.921875
+    },
+    {
+      "chain_id": 23,
+      "chain_seconds": 8.18330670002615,
+      "chain_cpu_seconds": 8.109375
+    }
+  ]
+}

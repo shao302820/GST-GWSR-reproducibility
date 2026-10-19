@@ -1,0 +1,14 @@
+{
+  "k": 55,
+  "alpha": 0.75,
+  "tau": 0.5,
+  "selected_cv": {
+    "alpha": 0.75,
+    "tau": 0.5,
+    "R2": 0.3421717043141409,
+    "RMSE": 20.351786811006768,
+    "MAE": 12.43139263301588
+  },
+  "candidate_count": 20,
+  "rule": "minimum pooled819 original-scale three-seed prediction-mean ensemble RMSE; exact ties alpha then tau"
+}

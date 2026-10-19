@@ -1,0 +1,79 @@
+{
+  "configuration_fingerprint": "211096162d56594e38a5de92",
+  "model_id": "gwrf",
+  "display_name": "地理加权随机森林（GWRF）",
+  "selected_parameters": {
+    "k_neighbors": 25,
+    "max_features": "sqrt",
+    "min_samples_leaf": 1,
+    "n_estimators": 300,
+    "kernel": "Gaussian",
+    "bandwidth_selection": "training-only common spatial-block CV on stratified validation anchors"
+  },
+  "complexity": {
+    "local_model_count": 205,
+    "trees_per_local_model": 300,
+    "total_tree_count": 61500,
+    "total_tree_nodes": 1861058,
+    "mean_tree_depth": 6.956585365853659,
+    "mean_feature_importance": {
+      "topo": 0.13105178632448766,
+      "bouguer": 0.12560405051041865,
+      "sediment": 0.11830420203709896,
+      "moho": 0.12590035084560605,
+      "lab": 0.1252945959012094,
+      "cpd": 0.12449542550192876,
+      "lithos_km": 0.11911659323046082,
+      "volcano": 0.13023299564878976
+    }
+  },
+  "efficiency": {
+    "tuning_wall_seconds": 14.354526399984024,
+    "tuning_cpu_seconds_main_process": 2.8125,
+    "tuning_peak_tracemalloc_mb": 1.1972131729125977,
+    "local_fit_and_prediction_wall_seconds": 5.217980300018098,
+    "local_fit_and_prediction_cpu_seconds_main_process": 0.375,
+    "local_fit_and_prediction_peak_tracemalloc_mb": 0.5655307769775391,
+    "final_fit_wall_seconds": 5.217980300018098,
+    "prediction_wall_seconds": 0.0,
+    "total_wall_seconds": 19.572506700002123,
+    "search_candidate_count": 12,
+    "spatial_cv_fit_count": 1440,
+    "parallel_workers": 12,
+    "memory_measurement_scope": "tracemalloc main process only; native and worker memory excluded",
+    "time_measurement_scope": "current run: training-only local-anchor tuning + one local forest fit/prediction per outer-test point",
+    "pipeline_elapsed_seconds": 19.5756715000025,
+    "serialized_artifact_size_bytes": null
+  },
+  "diagnostics": {
+    "best_training_spatial_anchor_RMSE_log_heat_flow": 0.31542532669080176,
+    "training_anchor_count": 120,
+    "spatial_cv_blocks": 5
+  },
+  "notes": {
+    "test_target_used_for_tuning": false,
+    "predictive_features": [
+      "topo",
+      "bouguer",
+      "sediment",
+      "moho",
+      "lab",
+      "cpd",
+      "lithos_km",
+      "volcano"
+    ],
+    "coordinates_as_predictors": false,
+    "coordinate_role": "local-neighborhood and Gaussian weights",
+    "distance_metric": "Euclidean longitude/latitude degrees, matching GST-GWSR",
+    "implementation_scope": "auditable local geographically weighted random forest; not a claim of reproducing a specific third-party GRF package",
+    "tuning_protocol": "Each tuning anchor is predicted after excluding its entire common spatial CV block from the eligible local training neighborhood."
+  },
+  "artifact": {
+    "saved": false,
+    "path": null,
+    "size_bytes": null,
+    "failure": null
+  },
+  "outer_test_metrics_written_here": false,
+  "outer_test_target_used_for_tuning": false
+}

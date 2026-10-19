@@ -1,0 +1,63 @@
+{
+  "configuration_fingerprint": "9589cba09352ea7a5ad4c710",
+  "model_id": "xgboost",
+  "display_name": "XGBoost",
+  "selected_parameters": {
+    "colsample_bytree": 0.8,
+    "learning_rate": 0.03,
+    "max_depth": 3,
+    "n_estimators": 300,
+    "subsample": 0.8,
+    "n_jobs": 12
+  },
+  "complexity": {
+    "tree_count": 300,
+    "feature_count": 8
+  },
+  "efficiency": {
+    "tuning_wall_seconds": 1.419667899957858,
+    "tuning_cpu_seconds_main_process": 0.4375,
+    "tuning_peak_tracemalloc_mb": 0.5557079315185547,
+    "final_fit_wall_seconds": 0.1786885000183247,
+    "final_fit_cpu_seconds_main_process": 1.0,
+    "final_fit_peak_tracemalloc_mb": 0.12804889678955078,
+    "prediction_wall_seconds": 0.0018689999706111848,
+    "prediction_cpu_seconds_main_process": 0.0,
+    "prediction_peak_tracemalloc_mb": 0.027772903442382812,
+    "total_wall_seconds": 1.600225399946794,
+    "search_candidate_count": 16,
+    "spatial_cv_fit_count": 80,
+    "parallel_workers": 12,
+    "memory_measurement_scope": "tracemalloc main process only; native and worker memory excluded",
+    "time_measurement_scope": "current run: spatial tuning + final fit + outer-test prediction",
+    "pipeline_elapsed_seconds": 1.6027752000372857,
+    "serialized_artifact_size_bytes": 62894
+  },
+  "diagnostics": {
+    "best_spatial_cv_RMSE_log_heat_flow": 0.2907447117616346,
+    "best_spatial_cv_score_std": 0.036091906935542456
+  },
+  "notes": {
+    "test_target_used_for_tuning": false,
+    "predictive_features": [
+      "topo",
+      "bouguer",
+      "sediment",
+      "moho",
+      "lab",
+      "cpd",
+      "lithos_km",
+      "volcano"
+    ],
+    "coordinates_as_predictors": false,
+    "inner_fold_scaling": "Feature StandardScaler and log-target StandardScaler are fitted separately inside every spatial CV training fold."
+  },
+  "artifact": {
+    "saved": true,
+    "path": "C:\\Users\\shen\\Desktop\\桌面混乱文件夹\\ml_multiseed_benchmark\\seed_123\\model_runs\\xgboost\\fitted_model.joblib",
+    "size_bytes": 62894,
+    "failure": null
+  },
+  "outer_test_metrics_written_here": false,
+  "outer_test_target_used_for_tuning": false
+}

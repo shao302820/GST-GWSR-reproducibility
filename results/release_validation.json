@@ -1,0 +1,33 @@
+{
+  "release_date": "2026-10-19",
+  "passed": true,
+  "training_performed": false,
+  "k_candidates": 9,
+  "gst_combinations": 20,
+  "cv_batches": 360,
+  "cv_ensemble_folds": 120,
+  "cv_histories": 58968,
+  "outer_batches": 6,
+  "outer_histories": 1230,
+  "outer_ensemble_models": 10,
+  "unit_tests": 16,
+  "executed_core_functions_and_classes_AST_matched": 41,
+  "selection": {
+    "k": 55,
+    "alpha": 0.75,
+    "tau": 0.5
+  },
+  "verified": [
+    "copied artifact SHA256",
+    "per-station seed means before metrics",
+    "all9bandwidth ensemble metrics",
+    "all20GST ensemble metrics",
+    "independent2457station predictions/formulas per threshold",
+    "actual5/20budgets,normalization and archive traces",
+    "outer205station alignment and metrics",
+    "baseline retained rows and spatial CV block memberships",
+    "target8Dfeature arrays,weights,similarity matrices and205taskplan"
+  ],
+  "figure_3_8": "two-by-two layout with geographically proportionate vertical spatial panel",
+  "full_training_rerun_performed_for_release": false
+}

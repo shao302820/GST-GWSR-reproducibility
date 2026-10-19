@@ -1,97 +1,99 @@
 # GST–GWSR reproducibility repository
 
-This repository contains the reproducibility package for the GST–GWSR marine heat-flow study: source data, the derived station table, the manuscript model code, locked configurations, figures, and recorded outputs. It contains only the final protocol used for the reported results.
+Current complete experiment, updated 19 October 2026: training-only bandwidth selection, the completed 20-setting GST grid, and the locked 205-station comparison.
 
-The canonical protocol is the protected fixed outer split:
+The input contains 1,024 marine heat-flow stations and eight geological/geophysical predictors. The fixed 80:20 split uses seed 42 (819 training, 205 evaluation); training-only 3-IQR cleaning retains 815 observations in the complete training set. Transformations are fitted to the relevant training subset. Predictions are evaluated on the original heat-flow scale in mW m⁻².
 
-- 1,024 marine heat-flow stations and eight geological/geophysical predictors.
-- An 80:20 split with seed 42: 819 outer-training rows and 205 held-out rows.
-- Training-only 3-IQR cleaning retains 815 rows.
-- Predictor standardization and log-response standardization are fitted on the retained outer training rows only.
-- Adaptive bisquare kernel with `k=45`, selected by five-fold training-only cross-validation.
-- GST uses distance similarity and local predictor-distribution similarity. The selected grid setting is `alpha=0.25`, `tau=0.7`.
-- GP seeds are 42, 123, and 456; population size is 1,000; complete search is 20 generations; transfer adaptation is 5 generations.
-- Non-finite or unsafe standardized predictions use the predefined local adaptive-bisquare weighted-mean fallback.
+## Current protocol
 
-The final recorded three-seed outer ensemble is:
+- GWSR/GST-GWSR: adaptive bisquare weights and Haversine great-circle distances, Earth radius 6,371.0088 km.
+- Five-fold training-only CV over k = 20, 25, 30, 35, 40, 45, 50, 55, 60 selects **k = 55**.
+- GST uses geographic similarity and feature similarity from the eight standardized predictors at each target point.
+- The completed grid is α ∈ {0, .25, .5, .75, 1}, τ ∈ {.5, .6, .7, .8}: **20 combinations**.
+- Selection minimizes pooled 819-station OOF RMSE after averaging the three original-scale predictions at each station. Exact ties use α then τ ascending. The selected setting is **α = .75, τ = .5**.
+- GP seeds: 42, 123, 456; population: 1,000; independent search: 20 generations; transferred adaptation: five rounds, with inherited-candidate reevaluation outside those five rounds.
+- Each completed parent supplies an archive of at most 1,000 finite, structurally deduplicated candidates retained across generations. The child receives the first 800 candidates plus 200 new random candidates; short archives are filled cyclically and the duplicate count is recorded.
+- The released engine preserves the recorded weight construction and search-entry normalization, initialization RNG and final-expression selection.
+- Twenty-four task chains, 12 worker processes and one numerical thread per worker; no adaptive stopping or additional semantic/task screening.
+- Unsafe predictions use the predefined local weighted-mean protection. Training failures stop the run.
+
+## Recorded results
+
+Three-seed, pointwise original-scale ensemble on the 205 evaluation stations:
 
 | Model | R² | RMSE (mW m⁻²) | MAE (mW m⁻²) |
 |---|---:|---:|---:|
-| Independent GWSR | 0.6341 | 14.0861 | 10.0628 |
-| GST-GWSR | 0.6470 | 13.8344 | 9.9883 |
+| Independent GWSR | 0.625502 | 14.249755 | 10.037380 |
+| GST-GWSR | 0.639695 | 13.977112 | 10.137433 |
 
-The matched `k=45` efficiency comparison records a mean runtime reduction from 93.86 s to 60.99 s (35.03%) and a reduction in objective-function evaluations from 4.100 million to 1.608 million (60.78%). These values are hardware- and implementation-dependent.
+Completed-batch search wall time summed over three seeds is 512.7787 s for independent GWSR and 260.8627 s for GST-GWSR (49.13% lower). Objective evaluations per seed are 4.100 million and 1.566 million (61.80% lower). Each GST seed has 181 five-round tasks and 24 independent 20-generation tasks. Timing includes parent searches, initialization and archive maintenance; shared preparation, planning, scoring and I/O are excluded. It is descriptive single-pair timing. The interrupted attempt adds at least 27 s outside the completed-batch totals.
 
-## Repository map
+The eight external baselines (OLS, GWR, MGWR, RF, GBR, XGBoost, SVR-RBF, GWRF) are included with their aligned retained predictions and fitting implementations. Their results were not newly fitted in the final GWSR/GST run. GWRF has the highest R² and lowest RMSE among the ten models; independent GWSR has the lowest MAE. Full metrics are in [results/model_comparison/metrics.csv](results/model_comparison/metrics.csv).
 
-```text
-configs/                 Locked protocol descriptions
-src/gwsr/                Portable core and exact experiment adapters
-scripts/                 Data validation, run wrappers, and figure helpers
-data/raw/                Source products, source metadata, and predictor grids
-data/processed/          Exact derived station table used by the experiments
-data/example/            Small deterministic smoke-test input
-results/                 Recorded metrics, predictions, manifests, and audits
-figures/current/         Current paper-ready figures
-docs/                    Data provenance and reproducibility protocol
-tests/                   Lightweight structural checks
-```
+![Training-only GST parameter selection](figures/current/Fig_3_6_GST_parameter_sensitivity.png)
 
-## Data and Git LFS
+![Local expression structure, with a geographically proportionate vertical map](figures/current/Fig_3_8_local_expression_structure.png)
 
-The exact model input is `data/processed/heat_flow_stations.csv` with columns `lon`, `lat`, `heat_flow`, `topo`, `bouguer`, `sediment`, `moho`, `lab`, `cpd`, `lithos_km`, and `volcano`. Large source rasters are tracked with Git LFS, so a clone must run `git lfs pull`.
+## Files
 
-To reproduce the paper run, obtain the permitted source products, create the derived station table, and validate it:
+| Directory | Contents |
+|---|---|
+| `src/gwsr/exact/` | Current local objective, GP archive, association and fold preparation |
+| `src/baselines/` | Eight external baseline implementations |
+| `configs/` | Current protocol and selected parameters |
+| `data/processed/` | Exact 1,024-station input |
+| `results/k_selection/` | Nine k candidates, seed-fold predictions and ensemble selection |
+| `results/gst_cv/` | Four thresholds, 360 batches, 120 ensemble folds, 58,968 task histories |
+| `results/final_outer/` | Six batches, 1,230 histories and two 205-station ensembles |
+| `results/external_baselines/` | Eight baseline predictions, selected settings and provenance |
+| `results/model_comparison/` | Current ten-model comparison |
+| `figures/current/` | Current plots in PNG/PDF/SVG |
+| `docs/` | Data provenance, protocol and verification details |
 
-```powershell
-python scripts/validate_station_table.py --input data/processed/heat_flow_stations.csv
-```
+## Verify the recorded experiment
 
-The validation script checks column names, finite values, positive response values, row count, and the expected eight-predictor schema. It does not download data or silently alter the table.
-
-## Environment
-
-The recorded run used Python 3.11.17 on Windows. Create an isolated environment and install the pinned scientific dependencies:
+Python 3.11.17 and the exact GP dependencies are recorded in `requirements.txt` and `environment.yml`.
 
 ```powershell
 python -m venv .venv
-.\.venv\Scripts\python.exe -m pip install --upgrade pip
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt
+.\.venv\Scripts\python.exe scripts/validate_station_table.py --input data/processed/heat_flow_stations.csv
+.\.venv\Scripts\python.exe scripts/verify_results.py
+.\.venv\Scripts\python.exe -m unittest discover -s tests
 ```
 
-The exact adapters use private `gplearn` operator APIs and therefore require `gplearn==0.4.3`. Run `python scripts/check_environment.py` before a long run.
+Verification checks source-copy SHA-256 values, all ensemble means and metrics, k selection, the 20-setting selection, generation histories, branch counts and independent-search parity. It performs no training.
 
-Before using the full station table, verify the software path with the bounded smoke test:
+## Reproduce fresh searches
+
+These commands write new directories and refuse to overwrite existing stage outputs.
 
 ```powershell
-python scripts/run_smoke.py
+python scripts/run_experiment.py all --output run_outputs/current --workers 12
 ```
 
-## Reproduction order
+Individual stages:
 
-1. Prepare and validate `data/processed/heat_flow_stations.csv`.
-2. Run the training-only neighbourhood selection with the exact random five-fold adapter. The outer-test responses are not used during selection:
+```powershell
+python scripts/run_experiment.py k-cv --output run_outputs/current
+python scripts/run_experiment.py gst-cv --output run_outputs/current
+python scripts/run_experiment.py outer --output run_outputs/current
+```
 
-   ```powershell
-   python src/gwsr/exact/run_random5fold.py
-   ```
+To reproduce only the locked final comparison from the recorded training selections:
 
-3. Run the training-only `alpha–tau` grid at fixed `k=45`:
+```powershell
+python scripts/run_experiment.py outer --selection-root results --output run_outputs/locked_outer
+```
 
-   ```powershell
-   $env:GST_GWSR_STATION_FILE = (Resolve-Path data/processed/heat_flow_stations.csv)
-   python src/gwsr/exact/select_alpha_tau_exact.py
-   ```
+External baselines use their own recorded environment (see `requirements-baselines.txt` and `results/external_baselines/protocol.json`). Run them in a separate environment:
 
-4. Run the locked outer comparison. Set `GST_GWSR_STATION_FILE` and run `src/gwsr/exact/run_outer_gwsr.py`, then run `src/gwsr/exact/run_outer_gst.py`. The scripts read the selected training-only alpha–tau record and write fresh outputs under `run_outputs/`.
-5. Generate figures and compare the new manifests with the recorded outputs in `results/`.
+```powershell
+python scripts/run_baselines.py --output run_outputs/external_baselines
+```
 
-The recorded results are evidence of one fixed study region and station configuration. They are not a claim of cross-region generalization.
+The portable workflow retains the recorded scientific operations and random seeds. The release checks verify extracted core functions against the executed sources and validate preparation/planning against saved arrays; a fresh full training run was not performed while assembling this release.
 
-## Results and provenance
+## Data and citation
 
-`results/final_outer/` contains the primary three-seed outer comparison. `results/gwsr_cv_k45/` contains the exact training-only selection records and fold-level outputs. `results/supplementary_efficiency/` contains the descriptive efficiency analysis. Every reported result is accompanied by its configuration and code fingerprint.
-
-## License and citation
-
-Code is released under the MIT license in `LICENSE`. Data remain subject to their original providers' terms; see `data/README.md`. If the study is used, cite the paper and the source datasets listed in `docs/data_sources.md`.
+Large source rasters use Git LFS; run `git lfs pull` to retrieve them. The exact station table is already included. See [docs/data_sources.md](docs/data_sources.md) and [docs/data_processing_workflow.md](docs/data_processing_workflow.md) for provenance and reconstruction. Code uses the MIT license; data retain their providers' terms.
